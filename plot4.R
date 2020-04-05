@@ -27,13 +27,13 @@ data$data_datetime <- as.POSIXct(data_datetime)
 ##Ploting hist&saving 
 png("plot4.png", 480,480,"px")
 
-par(mfrow = c(2,2), mar = c(4,4,2,2), oma=c(0,02,0))
+par(mfrow = c(2,2), mar = c(4,4,2,2), oma=c(0,0,2,0))
 with(data, {
   plot(Global_active_power~data$data_datetime, type = "l", xlab = "", ylab = "Global Active Power (killowats)")
   plot(data$Voltage~data$data_datetime, type = "l", xlab = "datetime", ylab = "Voltage")
   plot(Sub_metering_1 ~data$data_datetime, type = "l", xlab = "", ylab = "Energy Sub metering")
-  lines(Sub_metering_2, col = "red")
-  lines(Sub_metering_3, col = "blue")
+  lines(Sub_metering_2~data$data_datetime, col = "red")
+  lines(Sub_metering_3~data$data_datetime, col = "blue")
   legend("topright", col =c("black", "red", "blue"),  lwd = c(1,1,1) ,c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
   plot(data$Global_reactive_power~data$data_datetime, type = "l", xlab = "", ylab = "Global_reactive_power")
 })
