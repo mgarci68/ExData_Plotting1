@@ -28,9 +28,9 @@ data$data_datetime <- as.POSIXct(data_datetime)
 
 png("plot3.png", 480,480,"px")
 with(data, {
-  plot(Sub_metering_1 ~data$data_datetime, type = "l", xlab = "", ylab = "Energy Sub metering")
-  lines(Sub_metering_2 ~data$data_datetime, col = "red")
-  lines(Sub_metering_3 ~data$data_datetime, col = "blue")
+  plot(Sub_metering_1~data$data_datetime, type = "l", xlab = "", ylab = "Energy Sub metering")
+  lines(Sub_metering_2~data$data_datetime, col = "red")
+  lines(Sub_metering_3~data$data_datetime, col = "blue")
   legend("topright", col =c("black", "red", "blue"),  lwd = c(1,1,1) ,c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
   
 })
